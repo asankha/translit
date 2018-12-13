@@ -1,0 +1,3 @@
+Translit - the Fast, Free and Open Source Transliteration Engine
+
+Copyright (c) 2010 Asankha C. Perera. All Rights Reserved

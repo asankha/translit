@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.asankha</groupId>
+    <artifactId>translit</artifactId>
+    <version>1.0.0</version>
+    <packaging>pom</packaging>
+
+    <name>Translit</name>
+    <description>A fast, free and open source Transliterator, which could be easily extended to support other languages</description>
+    <inceptionYear>2010</inceptionYear>
+    <url>http://www.asankha.com</url>
+
+    <organization>
+        <name>Asankha Chamath Perera</name>
+        <url>http://www.asankha.com/</url>
+    </organization>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.0</version>
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.1</version>
+                <configuration>
+                    <archive>
+                        <manifestEntries>
+                            <Extension-Name>${pom.groupId}</Extension-Name>
+                            <Specification-Title>${pom.artifactId}</Specification-Title>
+                            <Specification-Vendor>Asankha Chamath Perera</Specification-Vendor>
+                            <Specification-Version>${pom.version}</Specification-Version>
+                            <Implementation-Title>Translit</Implementation-Title>
+                            <Implementation-Vendor-Id>com.asankha</Implementation-Vendor-Id>
+                            <Implementation-Vendor>Asankha Chamath Perera</Implementation-Vendor>
+                            <Implementation-Version>${pom.version}</Implementation-Version>
+                            <Main-Class>com.asankha.translit.Transliterate</Main-Class>
+                        </manifestEntries>
+                    </archive>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <modules>
+        <module>modules/core</module>
+    </modules>
+
+</project>
